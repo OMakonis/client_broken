@@ -194,7 +194,7 @@ def build_and_test_client(ctx, c_compiler, cxx_compiler, build_type, generator, 
                          "name": "ctest",
                          "image": OC_CI_CLIENT,
                          "environment": {
-                             "LC_ALL": "de_DE.UTF-8",
+                             "LC_ALL": "C.UTF-8",
                          },
                          "commands": [
                              'cd "' + build_dir + '"',
@@ -245,7 +245,6 @@ def gui_tests(ctx, trigger = {}, depends_on = [], filterTags = [], version = "da
                          "name": "GUItests",
                          "image": OC_CI_SQUISH,
                          "environment": {
-                             "LC_TIME": "de_DE.UTF-8",
                              "LICENSEKEY": from_secret("squish_license_server"),
                              "GUI_TEST_REPORT_DIR": GUI_TEST_REPORT_DIR,
                              "CLIENT_REPO": "/drone/src/",
@@ -283,7 +282,7 @@ def build_client(ctx, c_compiler, cxx_compiler, build_type, generator, build_com
             "name": "cmake",
             "image": OC_CI_CLIENT,
             "environment": {
-                "LC_ALL": "de_DE.UTF-8",
+                "LC_ALL": "C.UTF-8",
             },
             "commands": [
                 'mkdir -p "' + build_dir + '"',
@@ -295,7 +294,7 @@ def build_client(ctx, c_compiler, cxx_compiler, build_type, generator, build_com
             "name": build_command,
             "image": OC_CI_CLIENT,
             "environment": {
-                "LC_ALL": "de_DE.UTF-8",
+                "LC_ALL": "C.UTF-8",
             },
             "commands": [
                 'cd "' + build_dir + '"',
