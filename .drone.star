@@ -283,7 +283,7 @@ def build_client(ctx, c_compiler, cxx_compiler, build_type, generator, build_com
             "name": "cmake",
             "image": OC_CI_CLIENT,
             "environment": {
-                "LC_ALL": "C.UTF-8",
+                "LC_ALL": "de_DE.UTF-8",
             },
             "commands": [
                 'mkdir -p "' + build_dir + '"',
@@ -295,7 +295,7 @@ def build_client(ctx, c_compiler, cxx_compiler, build_type, generator, build_com
             "name": build_command,
             "image": OC_CI_CLIENT,
             "environment": {
-                "LC_ALL": "C.UTF-8",
+                "LC_ALL": "de_DE.UTF-8",
             },
             "commands": [
                 'cd "' + build_dir + '"',
