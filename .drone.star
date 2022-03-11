@@ -194,7 +194,7 @@ def build_and_test_client(ctx, c_compiler, cxx_compiler, build_type, generator, 
                          "name": "ctest",
                          "image": OC_CI_CLIENT,
                          "environment": {
-                             "LC_ALL": "C.UTF-8",
+                             "LC_ALL": "de_DE.UTF-8",
                          },
                          "commands": [
                              'cd "' + build_dir + '"',
