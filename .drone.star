@@ -245,6 +245,7 @@ def gui_tests(ctx, trigger = {}, depends_on = [], filterTags = [], version = "da
                          "name": "GUItests",
                          "image": OC_CI_SQUISH,
                          "environment": {
+                             "LC_TIME": "de_DE.UTF-8",
                              "LICENSEKEY": from_secret("squish_license_server"),
                              "GUI_TEST_REPORT_DIR": GUI_TEST_REPORT_DIR,
                              "CLIENT_REPO": "/drone/src/",
