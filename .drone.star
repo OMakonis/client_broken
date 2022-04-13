@@ -254,6 +254,7 @@ def gui_tests(ctx, trigger = {}, depends_on = [], filterTags = [], version = "da
                              "SERVER_INI": "/drone/src/test/gui/drone/server.ini",
                              "SQUISH_PARAMETERS": squish_parameters,
                              "STACKTRACE_FILE": STACKTRACE_FILE,
+                             "LC_TIME": "de_DE.UTF-8",
                          },
                      },
                  ] +
