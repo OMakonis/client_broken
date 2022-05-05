@@ -159,14 +159,10 @@ class PublicLinkDialog:
             self.toggleExpirationDate()
 
         if not expireDate == "default":
-            # get datetime in format %d %b %Y from the string expireDate
-            #             expDate = datetime.strptime(datetime.strftime(datetime.strptime(expireDate, '%Y-%m-%d'), '%d %b %Y'), '%d %b %Y')
+            # expDate = datetime.strptime(datetime.strftime(datetime.strptime(expireDate, '%Y-%m-%d'), '%-d/%-m/%y'), '%-d/%-m/%y')
             expDate = datetime.strptime(expireDate, '%Y-%m-%d')
 
-            # convert month into %b formatted string
-            expireMonth = datetime.strftime(expDate, '%b')
-
-            # expYear = expDate.year - 2000
+            expYear = expDate.year - 2000
             squish.mouseClick(
                 squish.waitForObject(self.EXPIRATION_DATE_FIELD),
                 0,
@@ -174,22 +170,26 @@ class PublicLinkDialog:
                 squish.Qt.NoModifier,
                 squish.Qt.LeftButton,
             )
-            squish.nativeType("<Delete>")
-            squish.nativeType("<Delete>")
+            squish.nativeType("<Ctrl+Right>")
+            squish.nativeType("<Ctrl+Right>")
+            # squish.nativeType("<Delete>")
+            # squish.nativeType("<Delete>")
+            squish.nativeType(expYear)
+            squish.nativeType("<Ctrl+Left>")
+            squish.nativeType(expDate.month)
+            squish.nativeType("<Ctrl+Left>")
             squish.nativeType(expDate.day)
-            squish.nativeType(expireMonth)
-            squish.nativeType(expDate.year)
             squish.nativeType("<Return>")
 
             actualDate = str(
                 squish.waitForObjectExists(self.EXPIRATION_DATE_FIELD).displayText
             )
-            expectedDate = f"{expDate.day} {expireMonth} {expDate.year}"
+            expectedDate = f"{expDate.day}/{expDate.month}/{expYear}"
 
             if not actualDate == expectedDate:
                 # retry with workaround
                 self.setExpirationDateWithWorkaround(
-                    expDate.year, expireMonth, expDate.day
+                    expYear, expDate.month, expDate.day
                 )
             squish.waitFor(
                 lambda: (test.vp("publicLinkExpirationProgressIndicatorInvisible"))
@@ -223,7 +223,6 @@ class PublicLinkDialog:
         squish.nativeType("<Ctrl+Left>")
         squish.nativeType(month)
         # Move the cursor to month field
-        squish.nativeType("<Ctrl+Left>")
         squish.nativeType("<Ctrl+Left>")
         squish.nativeType(day)
         squish.nativeType("<Return>")
