@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>ServerUrlSetupWizardPage</class>
+ <!-- <class>ServerUrlSetupWizardPage</class>
  <widget class="QWidget" name="ServerUrlSetupWizardPage">
   <property name="geometry">
    <rect>
@@ -185,5 +185,5 @@
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections/> -->
 </ui>
