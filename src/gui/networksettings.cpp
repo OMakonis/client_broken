@@ -34,7 +34,7 @@ NetworkSettings::NetworkSettings(QWidget *parent)
 {
     _ui->setupUi(this);
 
-    _ui->hostLineEdit->setPlaceholderText(tr("https://webdav.files.fm"));
+    _ui->hostLineEdit->setPlaceholderText(tr("Hostname of proxy server"));
     _ui->userLineEdit->setPlaceholderText(tr("Username for proxy server"));
     _ui->passwordLineEdit->setPlaceholderText(tr("Password for proxy server"));
 
