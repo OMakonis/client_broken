@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Add New Account</string>
+   <string>Add Another Account</string>
   </property>
   <property name="modal">
    <bool>true</bool>
