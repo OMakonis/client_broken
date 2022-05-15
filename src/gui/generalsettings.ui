@@ -32,13 +32,13 @@
        <item>
         <widget class="QGroupBox" name="generalGroupBox">
          <property name="title">
-          <string>General Settings</string>
+          <string>General changed Settings</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_2">
           <item row="1" column="0">
            <widget class="QCheckBox" name="monoIconsCheckBox">
             <property name="text">
-             <string>Use &amp;Monochrome Icons in the system tray</string>
+             <string>Use &amp;Monochrome changed Icons in the system tray</string>
             </property>
            </widget>
           </item>
